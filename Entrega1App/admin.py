@@ -10,7 +10,8 @@ class MarcasAdmin(admin.ModelAdmin):
 
 class ProductosAdmin(admin.ModelAdmin):
 
-    list_display = ('nombre', 'categoria',"precio","stockdisponible")
+    list_display = ('nombre', 'categoria',"precio","stock")
+    search_fields = ("nombre","categoria")
     
     
 admin.site.register(Marcas, MarcasAdmin)    

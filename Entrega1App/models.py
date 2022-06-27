@@ -14,6 +14,8 @@ class Marcas(models.Model):
     )
     categoria = models.PositiveSmallIntegerField("Categoría",choices=CATEGORIAS)
     cantidad_productos = models.IntegerField("Cantidad de productos")
+    class Meta:
+        verbose_name_plural = "Marcas"
 
 class Productos(models.Model):
     nombre = models.CharField(max_length=30) 
@@ -26,4 +28,6 @@ class Productos(models.Model):
     )
     categoria = models.PositiveSmallIntegerField("Categoria",choices=CATEGORIAS)
     precio = models.FloatField("Precio $")
-    stockdisponible = models.IntegerField("Stock disponible")
+    stock = models.IntegerField("Stock")
+    class Meta:
+        verbose_name_plural = "Productos"
