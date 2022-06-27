@@ -24,6 +24,6 @@ class Productos(models.Model):
         (4, "Deportes"),
         (5, "Ferretería"),
     )
-    categoria = models.PositiveSmallIntegerField("Categoría",choices=CATEGORIAS)
+    categoria = models.PositiveSmallIntegerField("Categoria",choices=CATEGORIAS)
     precio = models.FloatField("Precio $")
-    stock_disponible = models.IntegerField("Stock disponible")
+    stockdisponible = models.IntegerField("Stock disponible")
