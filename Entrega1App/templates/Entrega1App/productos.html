@@ -15,6 +15,11 @@ Productos
     <div class="container px-1">
         <div class="row gx-1 justify-content-center">
             <!-- <div class="col-lg-6"> -->
+                <a href="{%  url 'crear_producto' %}">                        
+                    <button type="button" class="btn btn-primary btn-sm">Crear Nuevo Producto</button>
+                </a><a href="{%  url 'buscar_producto' %}">                        
+                    <button type="button" class="btn btn-success btn-sm">Buscar Producto</button>
+                </a>
                 <table class="table table-light table-bordered">
                         <thead class="table-dark">
                         <tr>
@@ -46,9 +51,6 @@ Productos
                             
                             {% endfor %}
                 </table>
-                    <a href="{%  url 'crear_producto' %}">                        
-                        <button type="button" class="btn btn-primary btn-sm">Crear Nuevo Producto</button>
-                    </a>
                 <!-- </div> -->
             </div>
         </div>

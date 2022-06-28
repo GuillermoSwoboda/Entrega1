@@ -10,5 +10,6 @@ urlpatterns = [
     path("crear_marca/", crear_marca, name="crear_marca"),
     path("crear_producto/", crear_producto, name="crear_producto"),
     path("crear_local/", crear_local, name="crear_local"),
+    path("buscar_producto/", buscar_producto, name="buscar_producto"),
     path("base/",base),
 ]

@@ -112,8 +112,32 @@ def crear_local(request):
         return render(request,"Entrega1App/formularioLocal.html",{"form":formularioVacio})
     
     
-def dia(request):
+def buscar_producto(request):
     
-    hoy = datetime.datetime.now()
+    if request.method == "POST":
+        
+        nombre = request.POST["nombre"]
+        
+        nombres = Productos.objects.filter(nombre__icontains=nombre)
 
-    return render(request,"Entrega1App/index.html",{"dia_hora":hoy})    
+        return render(request,"Entrega1App/busqueda_producto.html",{"nombres":nombres})
+    
+    else:
+
+        nombres = [] 
+        
+        return render(request,"Entrega1App/busqueda_producto.html",{"nombres":nombres})        
+    
+    
+    # if request.method == "POST":
+
+    #     categoria = request.POST["categoria"]
+        
+    #     categorias = Productos.objects.filter(categoria__icontains=categoria)
+    
+    #     return render(request,"Entrega1App/busqueda_producto.html",{"categoria":categorias})
+    
+    # else: #get y otros
+        
+
+    #     return render(request,"Entrega1App/busqueda_producto.html",{"categoria":categorias})    
