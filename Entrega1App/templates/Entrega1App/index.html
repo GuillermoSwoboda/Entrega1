@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -19,14 +19,14 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-primary" style="background-color: #e3f2fd;">
             <div class="container px-5">
-                <a class="navbar-brand" href="#!">BIENVENIDO</a>
+                <a class="navbar-brand" href="{% url 'inicio' %}">BIENVENIDO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Marcas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Locales</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'marcas' %}">Marcas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'productos' %}">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'locales' %}">Locales</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,8 +40,8 @@
                             <h1 class="display-5 fw-bolder text-dark mb-2">Encuentre sus productos preferidos</h1>
                             <p class="lead text-dark-50 mb-4">Amplia variedad de marcas y productos de gran calidad</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                                <a class="btn btn-dark btn-lg px-4 me-sm-3" href="#features">Marcas Disponibles</a>
-                                <a class="btn btn-outline-light btn-lg px-4" href="#!">Productos Disponibles</a>
+                                <a class="btn btn-success btn-lg px-4 me-sm-3" href="{% url 'marcas' %}">Marcas Disponibles</a>
+                                <a class="btn btn-danger btn-lg px-4" href="{% url 'productos' %}">Productos Disponibles</a>
                             </div>
                         </div>
                     </div>
