@@ -11,13 +11,18 @@ Buscar Productos
 {% endblock %}
 
 {% block contenidoPagina %}
-<p>Buscar productos:
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+<p>Ingrese el producto que desea buscar:
     <form action="" method="post">
         {% csrf_token %}
 
         <input type="text" name="nombre" id="">
 
-        <input type="submit" value="Buscar">
+        <input type="submit" value="Buscar" class="btn btn-success btn-sm"> <a href="{%  url 'productos' %}">                        
+            <button type="button" class="btn btn-secondary btn-sm">Volver a Productos</button>
+        </a>
     </form>
 </p>
 
@@ -53,5 +58,8 @@ Buscar Productos
             
             {% endfor %}
     </table>
-    
+     </div>
+    </div>
+
+</section>
 {% endblock %}
