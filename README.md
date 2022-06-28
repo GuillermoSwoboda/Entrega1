@@ -1,5 +1,8 @@
 # Entrega1
 
+URL DE LA PAGINA:
+http://127.0.0.1:8000/app/
+
 OBJETIVO
 Crear una página que nuclée varios comercios. En ella los comercios pueden indicar cuales son las marcas con las que trabajan y los productos con los que cuentan. Los usuarios en un futuro pueden acceder y ver los productos, marcas, locales y efectuar una compra (esto último a desarrollar)
 
