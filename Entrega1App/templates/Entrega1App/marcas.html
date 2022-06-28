@@ -11,5 +11,29 @@ Marcas
 {% endblock %}
 
 {% block contenidoPagina %}
-Hola
+
+<section class="bg-light py-5">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <h4>Las marcas son:</h4>
+                    <ul class="list-group">
+                        {% for marca in marcas %}
+
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                {{marca.marca}}
+                                <span class="badge bg-success rounded-pill">Categoría: {{marca.get_categoria_display}}</span>
+                            </li>
+
+                        {% endfor %}
+
+                    </ul>
+                    <a href="{%  url 'crear_marca' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Generar Nueva Marca</button>
+                    </a>
+            </div>
+        </div>
+    </div>
+   
+</section>
 {% endblock %}

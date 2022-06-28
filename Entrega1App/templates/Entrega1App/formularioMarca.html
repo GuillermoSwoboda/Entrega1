@@ -1,0 +1,23 @@
+{% extends 'Entrega1App/base.html' %}
+{% load static %}
+
+
+{% block tituloPagina %}
+Formulario Marcas - App
+{% endblock %}
+
+{% block descripcionPagina %}
+Formulario para Marcas
+{% endblock %}
+
+{% block contenidoPagina %}
+<h2>Crea una Nueva Marca:</h2>
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Crear Marca">
+</form>
+
+{% endblock %}

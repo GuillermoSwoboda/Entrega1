@@ -50,6 +50,13 @@ class Locales(models.Model):
         (5, "Especialista en Ferretería"),
     )
     rubro_principal = models.PositiveSmallIntegerField("Rubro",choices=RUBROS)
+    direccion = models.CharField(max_length=150)
+    DIAS = (
+        (1, "Lunes a Viernes"),
+        (2, "Lunes a Sábados"),
+        (3, "Lunes a Domingos"),
+    )
+    dias = models.PositiveSmallIntegerField("Dias",choices=DIAS)
     horario_apertura = models.TimeField("Apertura")
     horario_cierre = models.TimeField("Apertura")
     class Meta:

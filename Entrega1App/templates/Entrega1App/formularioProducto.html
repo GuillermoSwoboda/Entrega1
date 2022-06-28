@@ -1,0 +1,23 @@
+{% extends 'Entrega1App/base.html' %}
+{% load static %}
+
+
+{% block tituloPagina %}
+Formulario Productos - App
+{% endblock %}
+
+{% block descripcionPagina %}
+Formulario para Productos
+{% endblock %}
+
+{% block contenidoPagina %}
+<h2>Crea un Nuevo Producto:</h2>
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Crear Producto">
+</form>
+
+{% endblock %}

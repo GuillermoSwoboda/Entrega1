@@ -11,5 +11,47 @@ Productos
 {% endblock %}
 
 {% block contenidoPagina %}
-Hola
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <!-- <div class="col-lg-6"> -->
+                <table class="table table-light table-bordered">
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Nombre del Producto</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Disponibilidad</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for producto in productos %}
+                                <tr>
+                                    <td scope="1">{{producto.nombre}}</td>
+                                    <td scope="2">{{producto.get_categoria_display}}</td>
+                                    <td scope="3">${{producto.precio}}</td>
+                                    <td scope="4">
+                                    {% if producto.stock == 0 %}
+                                        <p style="color: red;">SIN STOCK</p>
+                                    
+                                    {% elif producto.stock > 0 and producto.stock < 10 %}
+                                        <p style="color: rgb(192, 192, 59);">ÚLTIMAS UNIDADES</p>
+
+                                    {% else %}
+                                        <p style="color: green;">DISPONIBLE</p>
+                                    {% endif %}
+                                    </td>
+                                </tr>
+                        </tbody>
+                            
+                            {% endfor %}
+                </table>
+                    <a href="{%  url 'crear_producto' %}">                        
+                        <button type="button" class="btn btn-primary btn-sm">Crear Nuevo Producto</button>
+                    </a>
+                <!-- </div> -->
+            </div>
+        </div>
+       
+    </section>
 {% endblock %}

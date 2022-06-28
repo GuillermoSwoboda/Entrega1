@@ -11,5 +11,63 @@ Locales
 {% endblock %}
 
 {% block contenidoPagina %}
-Hola
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <!-- <div class="col-lg-6"> -->
+                <table class="table table-warning table-bordered">
+                        <thead class="table-danger">
+                        <tr>
+                            <th scope="col">Nombre Local</th>
+                            <th scope="col">Localidad</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Rubro Principal</th>
+                            <th scope="col">Horario</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for local in locales %}
+                                <tr>
+                                    <td scope="1">{{local.nombre}}</td>
+                                    <td scope="2">{{local.get_localidad_display}}</td>
+                                    <td scope="3">{{local.direccion}}</td>
+                                    <td scope="4">{{local.get_rubro_principal_display}}</td>
+                                    <td scope="5">De {{local.horario_apertura}} a {{local.horario_cierre}}</td>
+                                </tr>
+                        </tbody>
+                            
+                            {% endfor %}
+                </table>
+                    <a href="{%  url 'crear_local' %}">
+                        <button type="button" class="btn btn-primary btn-sm">Añadir Nuevo Local</button>
+                    </a>
+                <!-- </div> -->
+            </div>
+        </div>
+       
+    </section>
 {% endblock %}
+
+
+<!-- <section class="bg-light py-5">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                Los locales son:
+                    <ul class="list-group">
+                        {% for local in locales %}
+
+                            <li class="list-group-item d-flex justify-content-between align-items-start">
+                                {{local.nombre}}
+                                <span class="badge bg-success rounded-pill">{{local.get_localidad_display}}</span>
+                            </li>
+
+                        {% endfor %}
+
+                    </ul>
+                    <a href="{%  url 'crear_local' %}">+ Crear Nuevo Local</a>
+            </div>
+        </div>
+    </div>
+   
+</section> -->
