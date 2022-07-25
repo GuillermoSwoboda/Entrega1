@@ -31,8 +31,6 @@ SECRET_KEY = 'django-insecure-h9$k=a*p=q$(=l!5^#hcnw)e7r8&e*jv$0m&2**98@cmi%-f08
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://lit-basin-97364.herokuapp.com/',
-    'lit-basin-97364.herokuapp.com',
 ]
 
 
