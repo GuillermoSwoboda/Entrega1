@@ -3,21 +3,31 @@
 
 
 {% block tituloPagina %}
-Formulario Marcas - App
+Alta Marcas - App
+{% endblock %}
+
+{% block FotoPagina %}
+<header class="bg-dark py-5" style="background: url(https://media.istockphoto.com/photos/white-tablet-with-black-blank-screen-is-on-top-of-wood-desk-table-picture-id1154604514?k=20&m=1154604514&s=612x612&w=0&h=mP9bYc4oVQ4c2wcwXs0a4d-S5JR37_ZGyDdca4XAKEo=) no-repeat center center / cover">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
 {% endblock %}
 
 {% block descripcionPagina %}
-Formulario para Marcas
+Dar de alta una Marca
 {% endblock %}
 
 {% block contenidoPagina %}
-<h2>Crea una Nueva Marca:</h2>
+<h2>Crear Nueva Marca:</h2>
+<br>
 <form action="" method="post">
     {% csrf_token %}
 
     {{ form.as_p }}
 
     <input type="submit" value="Crear Marca">
+    <br><br>
 </form>
 
 {% endblock %}

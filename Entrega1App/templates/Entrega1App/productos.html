@@ -6,6 +6,14 @@
 Productos - App
 {% endblock %}
 
+{% block FotoPagina %}
+<header class="bg-dark py-5" style="background: url(https://us.123rf.com/450wm/alexandersikov/alexandersikov1902/alexandersikov190200017/116218699-comercio-electr%C3%B3nico-agregar-al-carrito-de-compras-en-l%C3%ADnea-tecnolog%C3%ADa-empresarial-concepto-de-inter.jpg?ver=6) no-repeat center center / cover">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+{% endblock %}
+
 {% block descripcionPagina %}
 Productos
 {% endblock %}
@@ -14,14 +22,15 @@ Productos
 <section class="bg-light py-2">
     <div class="container px-1">
         <div class="row gx-1 justify-content-center">
-            <!-- <div class="col-lg-6"> -->
+                <a href="{%  url 'buscar_producto' %}">                        
+                 <button type="button" class="btn btn-success btn-sm">Buscar Producto</button>
+                 </a>
+                 <h3></h3>
+                {% if user.is_authenticated %}
                 <a href="{%  url 'crear_producto' %}">                        
                     <button type="button" class="btn btn-primary btn-sm">Crear Nuevo Producto</button>
                 </a>
-                <h3></h3>
-                <a href="{%  url 'buscar_producto' %}">                        
-                    <button type="button" class="btn btn-success btn-sm">Buscar Producto</button>
-                </a>
+                {% endif %}
                 <h3></h3>
                 <table class="table table-light table-bordered">
                         <thead class="table-dark">
@@ -30,6 +39,9 @@ Productos
                             <th scope="col">Categoría</th>
                             <th scope="col">Precio</th>
                             <th scope="col">Disponibilidad</th>
+                            {% if user.is_authenticated %}
+                            <th scope="col">Acciones</th>
+                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
@@ -49,6 +61,13 @@ Productos
                                         <p style="color: green;">DISPONIBLE</p>
                                     {% endif %}
                                     </td>
+                                    {% if user.is_authenticated %}
+                                    <td>
+                                        <a href="{% url 'editar_producto' producto.id %}" class="text-primary badge badge-primary text-decoration-none"> <i class="bi bi-pencil-square"></i> Editar</a>
+                                        <a href="{% url 'eliminar_producto' producto.id %}" class="text-danger badge badge-danger text-decoration-none"> <i class="bi bi-x-square"></i> Eliminar</a>
+                                        
+                                    </td>
+                                    {% endif %}
                                 </tr>
                         </tbody>
                             

@@ -1,0 +1,30 @@
+{% extends 'Entrega1App/base.html' %}
+{% load static %}
+
+
+{% block tituloPagina %}
+Eliminar Local - App
+{% endblock %}
+
+{% block descripcionPagina %}
+Eliminar Local
+{% endblock %}
+
+{% block contenidoPagina %}
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <body>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <br>
+                    <h4>¿Está seguro que quiere eliminar este local?</h4>
+                    <br>
+                    <button type="button" class="btn btn-danger btn-lm"> Sí, eliminar</button>
+                    <br>
+                </form>
+            </body>
+        </div>
+    </div>
+</section>
+{% endblock %}

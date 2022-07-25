@@ -23,3 +23,5 @@ class LocalesAdmin(admin.ModelAdmin):
 admin.site.register(Marcas, MarcasAdmin)    
 admin.site.register(Productos, ProductosAdmin)
 admin.site.register(Locales, LocalesAdmin)
+
+admin.site.register(Avatar)

@@ -1,4 +1,7 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.models import User
+from Entrega1App.models import Avatar
 
 class NuevaMarca(forms.Form):
     
@@ -62,3 +65,41 @@ class NuevoLocal(forms.Form):
     dias = forms.ChoiceField(choices=DIAS, required=True, label="¿Qué días abre?",initial=0)
     horario_apertura = forms.TimeField(label="¿Cuál es el horario de apertura?")
     horario_cierre = forms.TimeField(label="¿Cuál es el horario de cierre?")
+    
+    
+class UserRegisterForm(UserCreationForm):
+    
+    email = forms.EmailField(label="Correo")
+    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
+    
+    first_name = forms.CharField(label="Nombre", required=False)
+    last_name = forms.CharField(label="Apellido", required=False)
+
+    class Meta:
+        model = User
+        fields = ["username", "email", "password1", "password2", "first_name", "last_name"]
+        
+
+class UserEditform(UserCreationForm):
+    
+    email = forms.EmailField(label="Correo")
+    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput, required=False)
+    password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput, required=False)
+
+    first_name = forms.CharField(label="Nombre")
+    last_name = forms.CharField(label="Apellido")
+
+    class Meta:
+        model = User
+        fields = ["email", "password1", "password2", "first_name", "last_name"]
+        help_texts = {k:"" for k in fields}
+
+
+class AvatarForm(forms.Form):
+    
+    imagen = forms.ImageField(label="Imagen", required=False)
+    
+    class Meta:
+        model = Avatar
+        fields = ["imagen"]

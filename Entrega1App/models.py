@@ -1,5 +1,6 @@
 from tabnanny import verbose
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -29,6 +30,7 @@ class Productos(models.Model):
     categoria = models.PositiveSmallIntegerField("Categoria",choices=CATEGORIAS)
     precio = models.FloatField("Precio $")
     stock = models.IntegerField("Stock")
+
     class Meta:
         verbose_name_plural = "Productos"
         
@@ -61,3 +63,9 @@ class Locales(models.Model):
     horario_cierre = models.TimeField("Apertura")
     class Meta:
         verbose_name_plural = "Locales"
+
+
+class Avatar(models.Model):
+ 
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="avatar/", blank=True, null=True)

@@ -3,7 +3,7 @@
 
 
 {% block tituloPagina %}
-Alta Local - App
+Editar Producto - App
 {% endblock %}
 
 {% block FotoPagina %}
@@ -15,18 +15,18 @@ Alta Local - App
 {% endblock %}
 
 {% block descripcionPagina %}
-Registrá tu Local
+Editar Producto
 {% endblock %}
 
 {% block contenidoPagina %}
-<h2>Crear Nuevo Local:</h2>
+<h2>Editar producto:</h2>
 <br>
 <form action="" method="post">
     {% csrf_token %}
 
     {{ form.as_p }}
 
-    <input type="submit" value="Crear Local">
+    <input type="submit" value="Confirmar cambios">
     <br><br>
 </form>
 

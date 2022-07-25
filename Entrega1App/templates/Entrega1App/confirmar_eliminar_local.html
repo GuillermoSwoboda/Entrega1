@@ -1,0 +1,27 @@
+{% extends 'Entrega1App/base.html' %}
+{% load static %}
+
+
+{% block tituloPagina %}
+Eliminar Local - App
+{% endblock %}
+
+{% block descripcionPagina %}
+Eliminar Local
+{% endblock %}
+
+{% block contenidoPagina %}
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+            <body>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    ¿Está seguro que quiere eliminar el local: {{ object.nombre }}?
+                    <input type="submit" value="Sí, eliminar.">
+                </form>
+            </body>
+        </div>
+    </div>
+</section>
+{% endblock %}

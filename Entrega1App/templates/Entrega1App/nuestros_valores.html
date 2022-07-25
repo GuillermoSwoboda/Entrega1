@@ -1,0 +1,54 @@
+{% extends 'Entrega1App/base.html' %}
+{% load static %}
+
+
+{% block tituloPagina %}
+Nuestros Valores - App
+{% endblock %}
+
+{% block FotoPagina %}
+<header class="bg-dark py-5" style="background: url(https://960508.smushcdn.com/2679803/wp-content/uploads/2022/03/MicrosoftTeams-image-60-copia.jpg?lossy=0&strip=1&webp=1) no-repeat center center / cover">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+{% endblock %}
+
+
+{% block descripcionPagina %}
+Nuestros Valores
+{% endblock %}
+
+{% block contenidoPagina %}
+
+<section class="bg-light py-5">
+<div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-9">
+            <div class="text-center my-5">
+<h1>¡La unión hace la fuerza!</h1>
+
+<h5>Nuestra historia nace de la decisión de no bajar los brazos y de la idea fundamental de que unidos, somos mucho más fuertes.
+</h5>
+
+<br><br>
+
+<h1>Los valores que nos representan</h1>
+
+<h5>Unimos nuestra pasión por la tecnología con la fuerza de lo colectivo para ayudar a los comercios de todo el país a mostrar sus locales y sus productos. De esta manera, lograr mejores oportunidades para los consumidores. Nuestra red de comercios trabaja de manera colaborativa, con honestidad y empatía en la búsqueda de la excelencia y el compromiso con los otros.
+</h5>
+
+<br><br>
+<h1>¡Sumá tu comercio ahora!</h1>
+
+                    </ul>
+                    <h3></h3>
+                    <a href="{%  url 'register' %}">
+                        <button type="button" class="btn btn-primary px-5 py-2">¡Sumá tu comercio!</button>
+                    </a>
+            </div>
+        </div>
+    </div>
+   
+</section>
+{% endblock %}

@@ -6,6 +6,14 @@
 Locales - App
 {% endblock %}
 
+{% block FotoPagina %}
+<header class="bg-dark py-5" style="background: url(https://mipropiojefe.com/wp-content/uploads/2021/07/elige_mejor_local.jpg) no-repeat center center / cover">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+{% endblock %}
+
 {% block descripcionPagina %}
 Locales
 {% endblock %}
@@ -14,7 +22,16 @@ Locales
 <section class="bg-light py-2">
     <div class="container px-1">
         <div class="row gx-1 justify-content-center">
-            <!-- <div class="col-lg-6"> -->
+            <a href="{%  url 'buscar_local' %}">                        
+                <button type="button" class="btn btn-success btn-sm">Buscar Locales</button>
+                </a>
+                <h3></h3>
+                {% if user.is_authenticated %}
+                <a href="{%  url 'crear_local' %}">                        
+                <button type="button" class="btn btn-primary btn-sm">Añadir Nuevo Local</button>
+                </a>
+                {% endif %}
+                <h3></h3>
                 <table class="table table-warning table-bordered">
                         <thead class="table-danger">
                         <tr>
@@ -22,7 +39,10 @@ Locales
                             <th scope="col">Localidad</th>
                             <th scope="col">Dirección</th>
                             <th scope="col">Rubro Principal</th>
-                            <th scope="col">Horario</th>
+                            <th scope="col">Día y Horario Abierto</th>
+                            {% if user.is_authenticated %}
+                            <th scope="col">Acciones</th>
+                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
@@ -32,16 +52,21 @@ Locales
                                     <td scope="2">{{local.get_localidad_display}}</td>
                                     <td scope="3">{{local.direccion}}</td>
                                     <td scope="4">{{local.get_rubro_principal_display}}</td>
-                                    <td scope="5">De {{local.horario_apertura}} a {{local.horario_cierre}}</td>
+                                    <td scope="5">{{local.get_dias_display}} de {{local.horario_apertura}} a {{local.horario_cierre}}</td>
+                                    {% if user.is_authenticated %}
+                                    <td>
+                                        <a href="{% url 'editar_local' local.id %}" class="text-primary badge badge-primary text-decoration-none"> <i class="bi bi-pencil-square"></i> Editar</a>
+                                        <a href="{% url 'eliminar_local' local.id %}" class="text-danger badge badge-danger text-decoration-none"> <i class="bi bi-x-square"></i> Eliminar</a>
+                                        
+                                    </td>
+                                    {% endif %}
                                 </tr>
                         </tbody>
                             
                             {% endfor %}
                 </table>
                     <h3></h3>
-                    <a href="{%  url 'crear_local' %}">
-                        <button type="button" class="btn btn-primary btn-sm">Añadir Nuevo Local</button>
-                    </a>
+                
                 <!-- </div> -->
             </div>
         </div>

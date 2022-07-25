@@ -1,0 +1,65 @@
+{% extends 'Entrega1App/base.html' %}
+{% load static %}
+
+
+{% block tituloPagina %}
+Buscar Locales - App
+{% endblock %}
+
+{% block FotoPagina %}
+<header class="bg-dark py-5" style="background: url(https://wp-mktg.prod.getty1.net/istockcontentredesign/wp-content/uploads/sites/5/bfi_thumb/thumbnail-cdf3e3e9d272abce6c7f240a209aa31c-34zbratbbk4lbmyep2idjwl69jo8og55ih39xsaii0610lsfw.jpeg) no-repeat center center / cover">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+{% endblock %}
+
+{% block descripcionPagina %}
+Buscar Locales
+{% endblock %}
+
+{% block contenidoPagina %}
+<section class="bg-light py-2">
+    <div class="container px-1">
+        <div class="row gx-1 justify-content-center">
+<p>Ingrese el local que desea buscar:
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <input type="text" name="nombre" id="">
+
+        <input type="submit" value="Buscar" class="btn btn-success btn-sm"> <a href="{%  url 'locales' %}">                        
+            <button type="button" class="btn btn-secondary btn-sm">Volver a todos los Locales</button>
+        </a>
+    </form>
+</p>
+
+<p>Resultados:</p>
+    <table class="table table-warning table-bordered">
+        <thead class="table-danger">
+        <tr>
+            <th scope="col">Nombre Local</th>
+            <th scope="col">Localidad</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Rubro Principal</th>
+            <th scope="col">Horario</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for resultado in nombres %}
+            <tr>
+                <td scope="1">{{resultado.nombre}}</td>
+                <td scope="2">{{resultado.get_localidad_display}}</td>
+                <td scope="3">{{resultado.direccion}}</td>
+                <td scope="4">{{resultado.get_rubro_principal_display}}</td>
+                <td scope="5">De {{resultado.horario_apertura}} a {{resultado.horario_cierre}}</td>
+            </tr>
+        </tbody>
+        
+            {% endfor %}
+    </table>
+    </div>
+    </div>
+
+</section>
+{% endblock %}
