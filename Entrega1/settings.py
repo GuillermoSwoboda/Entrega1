@@ -32,6 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'https://lit-basin-97364.herokuapp.com/',
+    'lit-basin-97364.herokuapp.com',
 ]
 
 
