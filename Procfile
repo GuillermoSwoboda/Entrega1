@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath Entrega1 Entrega1.wsgi
