@@ -3,6 +3,8 @@
 ## **URL DE LA PAGINA:**
 http://127.0.0.1:8000/app/
 
+## **LINK A COMPARTIDO DONDE FIGURA EL VIDEO EXPLICANDO LA PÁGINA:**
+https://drive.google.com/drive/folders/1egZGz9KHIJU8hPKPWxDswkd5GBznBlmQ?usp=sharing
 
 ### OBJETIVO:
 Crear una página que nuclée varios comercios. En ella los comercios pueden indicar los productos con los que cuentan y la información de sus locales. Los usuarios en un futuro pueden acceder y ver los productos, marcas, locales y efectuar una compra (esto último a desarrollar)
